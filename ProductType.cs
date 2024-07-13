@@ -9,11 +9,11 @@ namespace Reductio___Absurdum
     public class ProductType
     {
         public string Name { get; set; }
-        public int id { get; set; }
+        public int Id { get; set; }
         public ProductType(string name, int id)
         {
             Name = name;
-            this.id = id;
+            Id = id;
         }
     }
 }
