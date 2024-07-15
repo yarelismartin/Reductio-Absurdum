@@ -12,12 +12,24 @@ namespace Reductio___Absurdum
         public decimal Price { get; set; }
         public bool IsAvilable { get; set; }
         public ProductType ProductTypedId { get; set; }
-        public Product(string name, decimal price, bool isAvilable, ProductType productTypedId)
+
+        DateTime DateStocked { get; set; }
+
+        public int DaysOnShelf
+        {
+            get
+            {
+                TimeSpan timeOnShelf = DateTime.Now - DateStocked;
+                return timeOnShelf.Days;
+            }
+        }
+        public Product(string name, decimal price, bool isAvilable, ProductType productTypedId, DateTime dateStocked)
         {
             Name = name;
             Price = price;
             IsAvilable = isAvilable;
             ProductTypedId = productTypedId;
+            DateStocked = dateStocked;
         }
     }
 }
